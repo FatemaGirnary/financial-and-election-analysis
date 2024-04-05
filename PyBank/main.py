@@ -14,6 +14,7 @@ csvpath = os.path.join('Resources','budget_data.csv')
 output_file = "Financial Analysis.txt" 
 
 
+#Variables
 total_months = 0
 net_total = 0
 prev_profit_loss = 0
@@ -25,6 +26,7 @@ changes = []
 # Read the CSV file
 with open(csvpath, 'r') as file:
     csv_reader = csv.DictReader(file)
+
 
 #Iterate through each row
     for row in csv_reader:
