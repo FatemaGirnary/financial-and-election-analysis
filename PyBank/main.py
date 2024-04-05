@@ -10,6 +10,9 @@ import csv
 
 #file path
 csvpath = os.path.join('Resources','budget_data.csv')
+#output file path
+output_file = "Financial Analysis.txt" 
+
 
 total_months = 0
 net_total = 0
@@ -57,10 +60,23 @@ with open(csvpath, 'r') as file:
 # Calculate the average of those changes
 average_change = total_changes / (total_months-1)
 
-print ("Financial Analysis")
-print ("--------------------")
-print (f"Total Months: {total_months}")
-print (f"Total: ${net_total}")
-print (f"Average Change: ${average_change: .2f}")
-print (f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
-print (f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
+#print results
+print("Financial Analysis")
+print("--------------------")
+print(f"Total Months: {total_months}")
+print(f"Total: ${net_total}")
+print(f"Average Change: ${average_change: .2f}")
+print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
+print(f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
+
+#output results in a text file
+with open(output_file, 'w') as output:
+        output.write("Financial Analysis\n")
+        output.write("--------------------\n")
+        output.write(f"Total Months: {total_months}\n")
+        output.write(f"Total: ${net_total}\n")
+        output.write(f"Average Change: ${average_change: .2f}\n")
+        output.write(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})\n")
+        output.write(f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})\n")
+
+print("Election results have been saved to 'election_results.txt'")
