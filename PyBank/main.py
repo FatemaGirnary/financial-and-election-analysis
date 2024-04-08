@@ -27,9 +27,6 @@ changes = []
 with open(csvpath, 'r') as file:
     csv_reader = csv.DictReader(file)
 
-#Get the header row
-    header_row = next(csv_reader)
-
 #Iterate through each row
     for row in csv_reader:
 
